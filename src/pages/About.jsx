@@ -1,7 +1,7 @@
-// import React from "react";
+import React from "react";
 
 function About() {
-  return <div>ABout page</div>;
+  return <div className="text-red-300">ABout page</div>;
 }
 
 export default About;
