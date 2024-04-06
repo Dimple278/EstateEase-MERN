@@ -120,15 +120,16 @@ function SignUp() {
 
             <div>
               <button
+                disabled={loading}
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-rose-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
               >
-                SIGN UP
+                {loading ? "Loading..." : "Sign Up"}
               </button>
             </div>
             <div>
               <button
-                type="submit"
+                // type="submit"
                 className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
               >
                 CONTINUE WITH GOOGLE
@@ -145,6 +146,7 @@ function SignUp() {
               Sign in
             </Link>
           </p>
+          {error && <p className="text-red-500 mt-5">{error}</p>}
         </div>
       </div>
     </>
