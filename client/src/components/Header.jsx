@@ -1,20 +1,24 @@
 // import React from "react";
 
 import { Link } from "react-router-dom";
+import navlogo from "../assets/navlogo.png";
 
 function Header() {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-pink-700">
+    <nav className="flex items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-rose-600">
       <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
         <div className="flex items-center flex-shrink-0 text-gray-800 mr-16">
-          <span className="font-semibold text-xl tracking-tight">
-            WanderLust
-          </span>
+          <img
+            className="h-10 w-auto mr-2"
+            src={navlogo}
+            alt="WanderLust"
+            style={{ width: "120px" }}
+          />
         </div>
         <div className="block lg:hidden">
           <button
             id="nav"
-            className="flex items-center px-3 py-2 border-2 rounded text-pink-700 border-pink-700 hover:text-pink-700 hover:border-pink-700"
+            className="flex items-center px-3 py-2 border-2 rounded text-rose-600 border-rose-600 hover:text-rose-600 hover:border-rose-600"
           >
             <svg
               className="fill-current h-3 w-3"
@@ -29,29 +33,29 @@ function Header() {
       </div>
 
       <div className="menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8">
-        <div className="text-md font-bold text-pink-700 lg:flex-grow">
+        <div className="text-md font-bold text-rose-600 lg:flex-grow">
           <Link
             to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-pink-700 mr-2"
+            className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-rose-600 mr-2"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-pink-700 mr-2"
+            className=" block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-rose-600 mr-2"
           >
             About
           </Link>
           <Link
             to="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-pink-700 mr-2"
+            className="block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-rose-600 mr-2"
           >
             Menu 3
           </Link>
         </div>
         <div className="relative mx-auto text-gray-600 lg:block hidden">
           <input
-            className="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-600 sm:text-sm sm:leading-6"
             type="search"
             name="search"
             placeholder="Search"
@@ -77,7 +81,7 @@ function Header() {
         <div className="flex">
           <Link
             to="/sign-in"
-            className="block text-md px-4 py-2 rounded text-pink-700 ml-2 font-bold hover:text-white mt-4 hover:bg-pink-700 lg:mt-0"
+            className="block text-md px-4 py-2 rounded text-rose-600 ml-2 font-bold hover:text-white mt-4 hover:bg-rose-600 lg:mt-0"
           >
             Sign in
           </Link>
