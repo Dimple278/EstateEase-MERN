@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import OAuth from "../components/OAuth";
 
 function SignUp() {
   const [formData, setFormData] = useState({});
@@ -127,14 +128,7 @@ function SignUp() {
                 {loading ? "Loading..." : "Sign Up"}
               </button>
             </div>
-            <div>
-              <button
-                // type="submit"
-                className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
-              >
-                CONTINUE WITH GOOGLE
-              </button>
-            </div>
+            <OAuth />
           </form>
 
           <p className="mt-5 text-center text-sm text-gray-500">

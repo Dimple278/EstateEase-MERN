@@ -6,6 +6,7 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice";
+import OAuth from "../components/OAuth";
 
 function SignIn() {
   const [formData, setFormData] = useState({});
@@ -111,14 +112,7 @@ function SignIn() {
                 {loading ? "Loading..." : "Sign In"}
               </button>
             </div>
-            <div>
-              <button
-                // type="submit"
-                className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
-              >
-                CONTINUE WITH GOOGLE
-              </button>
-            </div>
+            <OAuth />
           </form>
 
           <p className="mt-5 text-center text-sm text-gray-500">
