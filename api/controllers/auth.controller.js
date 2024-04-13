@@ -35,6 +35,7 @@ export const signin = async (req, res, next) => {
 
 export const google = async (req, res, next) => {
   try {
+    // console.log(req.body);
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
@@ -57,6 +58,7 @@ export const google = async (req, res, next) => {
         avatar: req.body.photo,
       });
       await newUser.save();
+      // console.log(newUser)
       const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
       const { password: pass, ...rest } = newUser._doc;
       res

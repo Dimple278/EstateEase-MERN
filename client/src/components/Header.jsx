@@ -2,8 +2,11 @@
 
 import { Link } from "react-router-dom";
 import navlogo from "../assets/navlogo.png";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 function Header() {
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <nav className="flex items-center justify-between flex-wrap bg-white py-4 lg:px-12 shadow border-solid border-t-2 border-rose-600">
       <div className="flex justify-between lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
@@ -79,11 +82,19 @@ function Header() {
           </button>
         </div>
         <div className="flex">
-          <Link
-            to="/sign-in"
-            className="block text-md px-4 py-2 rounded text-rose-600 ml-2 font-bold hover:text-white mt-4 hover:bg-rose-600 lg:mt-0"
-          >
-            Sign in
+          <Link to="/profile">
+            {currentUser ? (
+              <img
+                className="rounded-full h-7 w-7 ml-3 object-cover"
+                src={currentUser.avatar}
+                alt="profile"
+              />
+            ) : (
+              <li className="block text-md px-4 py-2 rounded text-rose-600 ml-2 font-bold hover:text-white mt-4 hover:bg-rose-600 lg:mt-0">
+                {" "}
+                Sign in
+              </li>
+            )}
           </Link>
         </div>
       </div>
